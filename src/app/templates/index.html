@@ -2,11 +2,56 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Conversor de Imagens HEIC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor HEIC para JPG</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/layouts.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
 </head>
 <body>
-    <h1>Conversor de Imagens HEIC para JPG</h1>
-    <p>Faça upload de uma imagem HEIC para convertê-la para JPG.</p>
-    <a href="{{ url_for('conversor.upload') }}">Ir para Upload</a>
+    {% include 'layouts/header.html' %}
+
+    <div class="container">
+        <h1><i class="fa-solid fa-image"></i> Conversor HEIC → JPG</h1>
+        <p>Envie uma imagem no formato <strong>.heic</strong> ou <strong>.heif</strong><br>e faça o download automático em <strong>.jpg</strong>.</p>
+
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="flash">
+              {% for message in messages %}
+                <div><i class="fa-solid fa-triangle-exclamation"></i> {{ message }}</div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+
+        <form method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".heic,.heif" required>
+            <br>
+            <button type="submit">Converter e Baixar</button>
+        </form>
+        <footer>Conversão local – seus arquivos não são enviados para servidor externo.</footer>
+    </div>
+
+    {% include 'layouts/footer.html' %}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Recarregar página ao clicar na logo
+        document.getElementById('reloadLogo').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.reload();
+        });
+
+        // Botão "Deslogar" - apenas simulação, sem backend
+        const logoutBtn = document.getElementById('fakeLogoutBtn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function() {
+                alert("Funcionalidade de logout disponível após implementar sistema de login.");
+            });
+        }
+    </script>
 </body>
 </html>

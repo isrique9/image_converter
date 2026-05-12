@@ -1,4 +1,5 @@
 {
+    // Suas configurações de cor existentes
     "workbench.colorCustomizations": {
         "activityBar.activeBackground": "#aecb7d",
         "activityBar.background": "#aecb7d",
@@ -18,5 +19,14 @@
         "titleBar.inactiveBackground": "#97bd5899",
         "titleBar.inactiveForeground": "#15202b99"
     },
-    "peacock.color": "#97bd58"
+    "peacock.color": "#97bd58",
+
+    "terminal.integrated.profiles.windows": {
+        "PowerShell (com Venv)": {
+            "source": "PowerShell",
+            "args": ["-NoExit", "-Command", "& 'venv\\Scripts\\Activate.ps1'"]
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell (com Venv)",
+    "python.terminal.activateEnvironment": true
 }

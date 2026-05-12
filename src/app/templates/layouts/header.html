@@ -1,0 +1,31 @@
+<header class="site-header">
+        <div class="header-container">
+            <!-- Logo que recarrega a página -->
+            <div class="logo-area">
+                <a href="#" id="reloadLogo" class="logo-link">
+                    <img src="{{ url_for('static', filename='images/Imagotipo Branco.svg') }}" 
+                         alt="Imagotipo" 
+                         class="header-logo">
+                </a>
+            </div>
+
+            <!-- Navegação -->
+            <nav class="header-nav">
+                <!-- CORREÇÃO AQUI: main.index em vez de index -->
+                <a href="{{ url_for('main.index') }}" class="nav-link">
+                    <i class="fa-solid fa-house"></i> Início
+                </a>
+            </nav>
+
+            <!-- Simulação de usuário (sem autenticação real) -->
+            <div class="user-area">
+                <span class="logged-user">
+                    <i class="fa-regular fa-circle-user"></i> 
+                    Olá, <strong>Visitante!</strong>
+                </span>
+                <button type="button" id="fakeLogoutBtn" class="btn-logout">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Deslogar
+                </button>
+            </div>
+        </div>
+    </header>
