@@ -6,7 +6,7 @@ def create_app():
     app.config.from_object(Config)
 
     # Apenas o blueprint principal que unifica upload + conversão
-    from app.routes.main import bp as main_bp
+    from app.routes.routes import bp as main_bp
     app.register_blueprint(main_bp)   # ele responde pela raiz '/'
 
     return app

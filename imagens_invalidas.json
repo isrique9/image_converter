@@ -1,0 +1,71 @@
+{
+  "data_verificacao": "2026-04-29T12:59:38.294Z",
+  "total_imagens_processadas": 6367,
+  "total_heics_encontrados": 75,
+  "heic_com_extensao_jpg": {
+    "quantidade": 41,
+    "imagens": [
+      {
+        "id": 32,
+        "lista": [
+          {
+            "campo": "rows[4].CaminhoDocumentoPessoal_cp",
+            "url": "https://appform.cajamar.sp.gov.br/conjunto-aquatico/src/uploads/32/caminhodocumentopessoal_68c42995eb976.jpg",
+            "extensao_declarada": ".jpg",
+            "mime_real": "image/heic"
+          },
+          {
+            "campo": "rows[4].CaminhoRgResponsavelFrente_cp",
+            "url": "https://appform.cajamar.sp.gov.br/conjunto-aquatico/src/uploads/32/caminhorgresponsavelfrente_68c42995ebfe3.jpg",
+            "extensao_declarada": ".jpg",
+            "mime_real": "image/heic"
+          },
+          {
+            "campo": "rows[4].CaminhoRgResponsavelVerso_cp",
+            "url": "https://appform.cajamar.sp.gov.br/conjunto-aquatico/src/uploads/32/caminhorgresponsavelverso_68c42995ec4ea.jpg",
+            "extensao_declarada": ".jpg",
+            "mime_real": "image/heic"
+          },
+          {
+            "campo": "rows[4].CaminhoFoto_cp",
+            "url": "https://appform.cajamar.sp.gov.br/conjunto-aquatico/src/uploads/32/caminhofoto_68c42995ec9ea.jpg",
+            "extensao_declarada": ".jpg",
+            "mime_real": "image/heic"
+          }
+        ]
+      }
+    ]
+  },
+  "heic_com_extensao_heic": {
+    "quantidade": 32,
+    "imagens": [
+      {
+        "id": 514,
+        "lista": [
+          {
+            "campo": "rows[223].CaminhoFoto_cp",
+            "url": "https://appform.cajamar.sp.gov.br/conjunto-aquatico/src/uploads/514/caminhofoto_6909e6f9b4dd6.heic",
+            "extensao_declarada": ".heic",
+            "mime_real": "image/heic"
+          }
+        ]
+      }
+    ]
+  },
+  "arquivos_heic_falsos": {
+    "quantidade": 2,
+    "imagens": [
+      {
+        "id": 728,
+        "lista": [
+          {
+            "campo": "rows[316].CaminhoFoto_cp",
+            "url": "https://appform.cajamar.sp.gov.br/conjunto-aquatico/src/uploads/728/caminhofoto_6922498ab8001.heic",
+            "extensao_declarada": ".heic",
+            "mime_real": "image/jpeg"
+          }
+        ]
+      }
+    ]
+  }
+}
