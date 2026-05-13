@@ -39,12 +39,7 @@ def converter_url_para_jpg(url, caminho_saida):
     try:
         resp = requests.get(url, timeout=30)
         resp.raise_for_status()
-        conteudo = resp.content
-
-        imagem = Image.open(io.BytesIO(conteudo))
-        if imagem.mode in ("RGBA", "P", "LA"):
-            imagem = imagem.convert("RGB")
-        jpg_bytes = heic_para_jpg_bytes(conteudo)
+        jpg_bytes = heic_para_jpg_bytes(resp.content)
         with open(caminho_saida, "wb") as f:
             f.write(jpg_bytes)
         return True
