@@ -15,44 +15,39 @@
 
     <div class="container">
         <h1><i class="fa-solid fa-image"></i> Conversor HEIC → JPG</h1>
-        <p>Converta <strong>um arquivo HEIC/HEIF individual</strong> ou <strong>um JSON com URLs de imagens</strong> para JPG.</p>
+        <p>
+            Converta <strong>um arquivo HEIC/HEIF individual</strong> <strong>ou</strong> 
+            <strong>um JSON com URLs de imagens</strong> para JPG.  
+            Basta enviar o arquivo – o sistema detecta automaticamente o tipo e faz a conversão certa.
+        </p>
 
         {% with messages = get_flashed_messages() %}
-          {% if messages %}
+        {% if messages %}
             <div class="flash">
-              {% for message in messages %}
+            {% for message in messages %}
                 <div><i class="fa-solid fa-triangle-exclamation"></i> {{ message }}</div>
-              {% endfor %}
+            {% endfor %}
             </div>
-          {% endif %}
+        {% endif %}
         {% endwith %}
 
-        <!-- Formulário para arquivo único (HEIC/HEIF) -->
-        <div class="card mb-4">
-            <div class="card-header">
-                <i class="fa-regular fa-file-image"></i> Converter um arquivo HEIC/HEIF
-            </div>
-            <div class="card-body">
-                <form method="post" enctype="multipart/form-data" action="/">
-                    <input type="file" name="file" accept=".heic,.heif" required>
-                    <br>
-                    <button type="submit" class="btn btn-primary mt-2">Converter e Baixar JPG</button>
-                </form>
-            </div>
-        </div>
-
-        <!-- Formulário para JSON com URLs -->
+        <!-- Card único para qualquer arquivo suportado -->
         <div class="card">
             <div class="card-header">
-                <i class="fa-solid fa-list"></i> Converter múltiplas imagens via JSON
+                <i class="fa-solid fa-cloud-upload-alt"></i> Envie seu arquivo
             </div>
             <div class="card-body">
                 <form method="post" enctype="multipart/form-data" action="/">
-                    <input type="file" name="file" accept=".json" required>
+                    <input type="file" name="file" accept=".heic,.heif,.json" required>
                     <br>
-                    <small class="text-muted">O JSON pode conter URLs de imagens (HEIC, JPG, PNG, etc.) em qualquer estrutura. O resultado será um arquivo ZIP com todas as imagens convertidas para JPG.</small>
+                    <small class="text-muted">
+                        ✓ Arquivos <strong>.heic / .heif</strong> → convertidos para JPG e baixados individualmente.<br>
+                        ✓ Arquivos <strong>.json</strong> → todas as URLs de imagem encontradas são baixadas, convertidas para JPG e entregues em um arquivo ZIP.
+                    </small>
                     <br>
-                    <button type="submit" class="btn btn-success mt-2"><i class="fa-solid fa-download"></i> Baixar ZIP com JPGs</button>
+                    <button type="submit" class="btn btn-primary mt-3">
+                        <i class="fa-solid fa-download"></i> Converter e baixar
+                    </button>
                 </form>
             </div>
         </div>

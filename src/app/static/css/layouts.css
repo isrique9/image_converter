@@ -196,6 +196,16 @@
   margin-right: auto;
 }
 
+#external_site_footer_container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background: white; 
+    padding: 1rem;
+}
+
 @media only screen and (min-width: 1200px) {
   #external_site_header_container {
     width: 100%;
